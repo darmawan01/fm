@@ -2,13 +2,13 @@ import axios, { isAxiosError } from 'axios';
 import { ChevronDownIcon, ChevronRightIcon, FileIcon, FolderIcon, FolderPlusIcon, HardDriveUpload, ImageIcon, InfoIcon, TrashIcon, UploadIcon } from 'lucide-react';
 import React, { useEffect, useState } from 'react';
 
-const API_BASE_URL = 'http://localhost:8080/v1/filemanager';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
 
 const API = axios.create({
   baseURL: API_BASE_URL,
   headers: {
-    Authorization: `Bearer fc8211d9819f87e94ec78dc8ad728c5c00986c36a37ea3235fcba97f66824cd7_eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJha3NlcyI6IkFETUlOIiwiY3JlYXRlZCI6MTcyODA1NzcwMDA3MywiZXhwIjoxNzI4NjYyNTAwLCJpbml0aWFsX2RldmljZV9kaXNwbGF5X25hbWUiOiJGYWRpbCIsImlzX3N1cGVyYWRtaW4iOnRydWUsImtlcG9saXNpYW5fbGV2ZWwiOiJNQUJFUyIsImtvZGVfa29yd2lsIjoiIiwia29kZV9zYXRrZXIiOiIiLCJuYW1lIjoiRmFkaWwiLCJucnAiOiIwMTA2MTk5NyIsInJvbGVzIjpudWxsLCJzcHBtIjoiIiwic3ViIjoic3VwZXJhZG1pbiIsInVzZXJfbmFtZSI6InN1cGVyYWRtaW4iLCJ1c2VyX3V1aWQiOiIzOTA0ZjM3Yy03MDYyLTQzOGMtODZhOS1hNjdhNmRkMTUyZTUifQ.1O_wXTFQpPuBkQiIcXFMZM_HyMZkoR6W4_CTyGnDA3I`,
-    Dates: 1728057699916
+    Authorization: process.env.REACT_APP_API_TOKEN,
+    Dates: process.env.REACT_APP_API_DATES,
   },
 });
 
